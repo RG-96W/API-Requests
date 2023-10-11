@@ -39,7 +39,7 @@ const chamadoSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ['Novo', 'Em Atendimento', 'Bloqueado', 'Fechado'],
-    default: 'Aberto',
+    default: 'Novo',
   },
   responsavel: String,
   cliente: String,
