@@ -44,8 +44,19 @@ const chamadoSchema = new mongoose.Schema({
   responsavel: String,
   cliente: String,
   data_previsao: Date,
+  data_fechamento: {
+    type: Date,
+    default: null, // Inicialmente, a data de fechamento é nula
+  },
   comentarios: [comentarioSchema],
 });
+
+// Método para verificar e definir a data de fechamento
+chamadoSchema.methods.marcarComoFechado = function () {
+  if (this.status === 'Fechado' && this.data_fechamento === null) {
+    this.data_fechamento = new Date();
+  }
+};
 
 // Pré-salvar o documento para definir o ID interno automaticamente
 chamadoSchema.pre('save', async function (next) {

@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/requests', requestsRouter); // Roteie as solicitações para /requests para o requestsRouter
 
 const HOST = '127.0.0.1';
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 51000;
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT,() => {
   console.log(`Servidor rodando em http://${HOST}:${PORT}`);
 });
