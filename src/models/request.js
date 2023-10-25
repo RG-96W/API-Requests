@@ -36,9 +36,13 @@ const chamadoSchema = new mongoose.Schema({
     enum: ['Baixo', 'Médio', 'Alto'],
     default: 'Médio',
   },
+   FCR: {
+    type: Number,
+    default: 0,
+  },
   status: {
     type: String,
-    enum: ['Novo', 'Em Atendimento', 'Bloqueado', 'Fechado'],
+    enum: ['Novo', 'Em Atendimento', 'Bloqueado', 'Fechado', 'Reaberto'],
     default: 'Novo',
   },
   responsavel: String,
